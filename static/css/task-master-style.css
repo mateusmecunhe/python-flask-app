@@ -10,12 +10,7 @@ body{
 
 .content{
     position: relative;
-
 }
-
-
-
-
 
 h1{
     text-align: center;
@@ -37,7 +32,7 @@ h1{
 }
 
 .card{
-
+    box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.342);
     background-color: #b97e127e;
     height: 200px;
     width: 200px;
