@@ -139,7 +139,7 @@ a:hover{
 }
 
 .no-tasks-warning{
-    margin-top: 50%;
+    margin-top: 20%;
     color: rgb(197, 149, 15); 
 }
 
@@ -152,7 +152,7 @@ a:hover{
     max-width: 100%;
     }
 
-    .card-panel{
+    .card-panel, .no-tasks-warning{
         margin-top: 25%;
     }
 
