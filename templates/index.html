@@ -1,35 +1,84 @@
-
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon"/>
-    <title>Mateus' website</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  </head>
 
-  <body>
-    
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon" />
+
+  <title>Mateus' website</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <header class="menu menu-mobile" id="navbar">
+    <div id="nav-icon" class="menu-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- <span class="mobile-btn"></span> -->
+    <nav class="menu-nav">
+      <div class="menu-options">
+        <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Portfolio</a></li>
+          <li><a href="/">contact</a></li>
+        </ul>
+      </div>
     </nav>
+  </header>
 
-    <section class="about">
-        <p>while I'm building this website, <a href="task">check out my Python3/Flask task manager (CRUD)</a></p>
-        <p>or my underway <a href="bmi">bmi calculator</a></p>
+  <main>
+    <section class="about" id="about">
+      <div class="container">
+        <h2>Hello!</h2>
+        <p>I'm a  web developer and have knowledge in</p>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>Python</li>
+        </ul>
+
+        <p>other non(-directly)-related to development things that I know/am</p>
+        <ul>
+          <li>I'm a yoga instructor</li>
+          <li>I've worked for 10 years in advertising, including fundraising experience</li>
+          
+        </ul>
+
+      </div>
+
     </section>
-    <section class="contact">
 
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p>As I build personal projects, I'll be deploying them here</p>
+        <p>By the way, this website is built by a Python/Flask application</p>
+        <ul>
+          <li> <a href="task">check out my Python3/Flask task manager</a></li>
+          <li> <a href="bmi">or my BMI calculator</a></li>
+        </ul>
+      </div>
     </section>
-    
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>@: mateusmecunhe@gmail.com</p>
+        <p>github: mateusmecunhe</p>
+      </div>
+    </section>
 
 
+  </main>
 </body>
-  
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/menu.js') }}"></script>
 <html>
