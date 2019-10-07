@@ -21,8 +21,10 @@
 
         {% for pacient in pacients %}
         <div class="card">
-            <p class="">{{pacient.name}}</p>
-            <p class="">{{pacient.bmi}}</p>
+            <p class="">Name: {{pacient.name}}</p>
+            <p class="">Weight: {{pacient.weight}} kg</p>
+            <p class="">Height: {{pacient.height}} cm</p>
+            <p class="">BMI: {{pacient.bmi}}</p>
             
             <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
            
