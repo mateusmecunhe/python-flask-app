@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculate your BMI!</title>
+    </head>
+    <body>
+        <form action="/bmi", method="POST">
+            <input type="text" name="name" id="name" placeholder="type your name"> <br>
+            <input type="number" name="weight" id="weight" placeholder="kg"> <br>
+            <input type="number" name="height" id="height" placeholder="cm"> <br>
+            <input type="submit" name="submit" id="submit" value="calculate!">
+            
+        </form>
+
+
+        
+    {% if pacients|length < 1 %}
+    <p class="no-tasks-warning">there are no pacients</p>
+
+    {% else %}
+
+        {% for pacient in pacients %}
+        <div class="card">
+            <p class="">{{pacient.name}}</p>
+            <p class="">{{pacient.bmi}}</p>
+            
+            <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
+           
+        </div>
+
+
+        {% endfor %}
+
+    </div>
+    {% endif %}
+    </body>
+</html>
