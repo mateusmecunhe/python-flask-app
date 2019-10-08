@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Calculate your BMI!</title>
-    </head>
-    <body>
-        <form action="/bmi", method="POST">
-            <input type="text" name="name" id="name" placeholder="type your name"> <br>
-            <input type="number" name="weight" id="weight" placeholder="kg"> <br>
-            <input type="number" name="height" id="height" placeholder="cm"> <br>
-            <input type="submit" name="submit" id="submit" value="calculate!">
-            
-        </form>
 
+<head>
+    <title>Calculate your BMI!</title>
+</head>
 
-        
-    {% if pacients|length < 1 %}
-    <p class="no-tasks-warning">there are no pacients. Add one</p>
+<body>
+    <form action="/bmi/" , method="POST">
+        <input type="text" name="name" id="name" placeholder="type your name" required> <br>
+        <input type="number" name="weight" id="weight" placeholder="kg" required> <br>
+        <input type="number" name="height" id="height" placeholder="cm" required> <br>
+        <input type="submit" name="submit" id="submit" value="calculate!">
 
-    {% else %}
+    </form>
+
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% if pacients|length < 1 %}
+        <p class="no-tasks-warning">there are no pacients. Add one</p>
+
+        {% else %}
 
         {% for pacient in pacients %}
-        <div class="card">
+        <div class="">
             <p class="">Name: {{pacient.name}}</p>
             <p class="">Weight: {{pacient.weight}} kg</p>
             <p class="">Height: {{pacient.height}} cm</p>
             <p class="">BMI: {{pacient.bmi}}</p>
-            
+
             <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
-           
+            <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
+
         </div>
 
 
         {% endfor %}
 
-    </div>
-    {% endif %}
-    </body>
+        </div>
+        {% endif %}
+</body>
+
 </html>
