@@ -1,42 +1,25 @@
+{% extends 'header.html' %}
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-  <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon" />
 
-  <title>Mateus' website</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-</head>
 
-<body>
+{% block head %}
 
-  <header class="menu menu-mobile" id="navbar">
-    <div id="nav-icon" class="menu-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <!-- <span class="mobile-btn"></span> -->
-    <nav class="menu-nav">
-      <div class="menu-options">
-        <ul>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Portfolio</a></li>
-          <li><a href="/">contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon" />
+<title>Mateus' website</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block body %} 
 
   <main>
     <section class="about" id="about">
       <div class="container">
         <h2>Hello!</h2>
-        <p>I'm a  web developer and have knowledge in</p>
+        <p>I'm a web developer and have knowledge in</p>
         <ul>
           <li>HTML5</li>
           <li>CSS3</li>
@@ -78,7 +61,4 @@
 
 
   </main>
-</body>
-<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/menu.js') }}"></script>
-<html>
+  {% endblock %}

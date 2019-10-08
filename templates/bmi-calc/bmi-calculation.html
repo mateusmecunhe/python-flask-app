@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html>
+{% extends 'bmi-calc/bmi-base.html' %}
+{% block head %}
+<title>calculate your BMI</title>
 
-<head>
-    <title>Calculate your BMI!</title>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bmi/bmi.css') }}">
+{% endblock %}
+{% block body %}
+<h1>calculate your body-mass index</h1>
+<form action="/bmi/" , method="POST">
+    <input type="text" name="name" id="name" placeholder="type your name" required> <br>
+    <input type="number" name="weight" id="weight" placeholder="kg" required> <br>
+    <input type="number" name="height" id="height" placeholder="cm" required> <br>
+    <input type="submit" name="submit" id="submit" value="calculate!">
 
-<body>
-    <form action="/bmi/" , method="POST">
-        <input type="text" name="name" id="name" placeholder="type your name" required> <br>
-        <input type="number" name="weight" id="weight" placeholder="kg" required> <br>
-        <input type="number" name="height" id="height" placeholder="cm" required> <br>
-        <input type="submit" name="submit" id="submit" value="calculate!">
+</form>
 
-    </form>
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
 
-    {% if error %}
-    <p class=error><strong>Error:</strong> {{ error }}
-        {% endif %}
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
 
-        {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-        {% endfor %}
+    {% if pacients|length < 1 %}
+    <p class="no-tasks-warning">there are no pacients. Add one</p>
 
-        {% if pacients|length < 1 %}
-        <p class="no-tasks-warning">there are no pacients. Add one</p>
+    {% else %}
+    <div class="grid title">
+        <span>Name</span>
+        <span>weiight</span>
+        <span>height</span>
+        <span>bmi</span>
+        <span>Delete</span>
+        <span>update</span>
+    </div>
 
-        {% else %}
-
+    <div class="grid data">
         {% for pacient in pacients %}
-        <div class="">
-            <p class="">Name: {{pacient.name}}</p>
-            <p class="">Weight: {{pacient.weight}} kg</p>
-            <p class="">Height: {{pacient.height}} cm</p>
-            <p class="">BMI: {{pacient.bmi}}</p>
 
-            <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
-            <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
+        <span class="">{{pacient.name}}</span>
+        <span class="">{{pacient.weight}} kg</span>
+        <span class="">{{pacient.height}} cm</span>
+        <span class="">{{pacient.bmi}}</span>
 
-        </div>
+        <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
+        <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
+
+
 
 
         {% endfor %}
-
-        </div>
-        {% endif %}
-</body>
-
-</html>
+    </div>
+  
+    {% endif %}
+    {% endblock %}

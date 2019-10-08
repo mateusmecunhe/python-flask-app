@@ -1,11 +1,12 @@
 body{
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: url(../img/task-bg-mobile.jpg);
+    background: url('../../img/task-bg.jpg');
     background-size: cover;
     background-repeat: repeat;
     /* background-color: rgba(233, 58, 204, 0.6) */
     max-width: 100%;
+    margin-top: 5%;
 }
 
 .content{
@@ -145,10 +146,8 @@ a:hover{
 
 @media only screen and (max-width: 768px){
     body{
-    background: url(../img/task-bg-mobile.jpg);
     background-size: cover;
     background-repeat: repeat;
-    /* background-color: rgba(233, 58, 204, 0.6) */
     max-width: 100%;
     }
 

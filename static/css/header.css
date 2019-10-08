@@ -6,7 +6,7 @@
     width: 100%;
     /* border-bottom: 2px solid yellow; */
     top: 0;
-    /* z-index: 99999; */
+    z-index: 1;
     height: 50px;;
 }
 
@@ -118,6 +118,7 @@
 .menu-options {
     visibility: hidden;
     position: relative;
+    display: none;
 
 }
 
