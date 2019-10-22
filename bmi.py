@@ -9,15 +9,21 @@ db = SQLAlchemy(app)
 class Pacient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
-    weight = db.Column(db.Integer, default=0)
-    height = db.Column(db.Integer, default=0)
+    weight = db.Column(db.Float, default=0)
+    height = db.Column(db.Float, default=0)
     bmi = db.Column(db.Float, default=0)
 
     def __repr__(self):
         return '<Pacient: %r>' % self.id 
 
 def calculate_bmi(height, weight):
-    return round(weight/((height/100) * (height/100)), 2)
+    height_in_m = height/100
+    height_in_m_squared = height_in_m * height_in_m
+    bmi = (weight/height_in_m_squared)
+    print(type(height))
+    print(type(weight))
+    print(bmi)
+    return round(bmi, 2)
 
 def validate_pacient(pacient):
     error = ()
@@ -37,15 +43,18 @@ def bmi_calc():
         return render_template('bmi-calc/bmi-calculation.html', pacients=pacients)
     elif request.method == "POST":
         pacient_name = request.form['name']
-        pacient_weight = int(request.form['weight'])
-        pacient_height = int(request.form['height'])
+        pacient_weight = float(request.form['weight'])
+        pacient_height = float(request.form['height'])
+        
         pacient_bmi = calculate_bmi(height=pacient_height, weight=pacient_weight)
+        print(pacient_bmi)
         pacient = Pacient(name=pacient_name, height=pacient_height, weight=pacient_weight, bmi=pacient_bmi)
        
         error = validate_pacient(pacient)
         # flash(error)
-        if error is None:
+        if len(error) is 0:
             try:
+                print('*a*a*A*A')
                 db.session.add(pacient)
                 db.session.commit()
                 return redirect('/bmi')

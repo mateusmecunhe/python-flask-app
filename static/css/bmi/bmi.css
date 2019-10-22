@@ -19,6 +19,16 @@ h1{
     color: wheat;
     background-color: rgba(0,0,0, 0.2)
 }
+form input{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#submit{
+    background-color: pink;
+    border-radius: 25px;
+    color: blueviolet;
+}
 
 .form{
     margin-left: auto;
@@ -33,14 +43,36 @@ h1{
 }
 
 .cards-flexbox{
-    display: flexbox;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 50px;
 }
 
 .pacient-card{
     display: inline-table;
-    background-color: rgba(20, 20, 20, 0.2);
+    background-color: rgba(245, 245, 245, 0.3);
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
 
+.pacient-card ul{
+    text-align: center;
+}
+
+.delete-link{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.update-link{
+    position: absolute;
+    right: 0;
+    bottom: 0
 }

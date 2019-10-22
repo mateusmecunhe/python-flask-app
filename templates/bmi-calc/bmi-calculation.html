@@ -28,24 +28,25 @@
         <p class="no-tasks-warning">there are no pacients. Add one</p>
 
         {% else %}
-<div class="cards-flexbox"></div>
+        <div class="cards-flexbox">
         {% for pacient in pacients %}
-        
-            <div class="pacient-card">
-                <ul>
-                    <li>Name: {{pacient.name}}</li>
-                    <li>Weight: {{pacient.weight}}</li>
-                    <li>Height: {{pacient.height}}</li>
-                    <li>BMI: {{pacient.bmi}}</li>
-                </ul>
 
-                <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
-                <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
-            </div>
+        <div class="pacient-card">
+            <ul>
+                <li>Name: {{pacient.name}}</li>
+                <li>Weight: {{pacient.weight}}</li>
+                <li>Height: {{pacient.height}}</li>
+                <li>BMI: {{pacient.bmi}}</li>
+            </ul>
 
+            <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
+            <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
         </div>
 
+
+
         {% endfor %}
+</div>
 </div>
 </div>
 {% endif %}
