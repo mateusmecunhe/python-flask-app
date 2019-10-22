@@ -7,9 +7,9 @@
 {% block body %}
 <div class="container">
     <h1>calculate your body-mass index</h1>
-    <p class="json-link">you can find a REST api of pacients in <a href="./rest"> here</a>
+    <p class="json-link">you can find a REST api of patients in <a href="./rest"> here</a>
     <br>
-    try using postman to post or get pacients. and /id to put or delete </p>
+    try using postman to post or get patients. and /id to put or delete </p>
     <div class="form">
         <form action="/bmi/" , method="POST">
             <input type="text" name="name" id="name" placeholder="type your name" required> <br>
@@ -28,7 +28,7 @@
         {% endfor %}
 
         {% if pacients|length < 1 %}
-        <p class="no-tasks-warning">there are no pacients. <br> Add one</p>
+        <p class="no-tasks-warning">there are no patients. <br> Add one</p>
 
         {% else %}
         <div class="cards-flexbox">
