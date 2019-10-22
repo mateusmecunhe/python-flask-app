@@ -169,4 +169,9 @@ form input{
         padding-top: 20px;
         margin-bottom: 10px
     }
+
+    .json-link{
+        color: black;
+        font-size: 16px;
+    }
 }
