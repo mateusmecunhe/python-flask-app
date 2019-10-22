@@ -58,6 +58,7 @@ form input{
     background-color: pink;
     border-radius: 25px;
     color: blueviolet;
+    font-weight: bold;
 }
 
 #submit:hover{
@@ -102,6 +103,7 @@ form input{
     width: 200px;
     position: relative;
     margin-bottom: 20px;
+    border-radius: 05px;
 }
 
 .pacient-card ul{
@@ -112,14 +114,27 @@ form input{
     position: absolute;
     left: 0;
     bottom: 0;
+    font-size: 16px;
 }
 
 .update-link{
     position: absolute;
     right: 0;
-    bottom: 0
+    bottom: 0;
+    font-size: 16px;
 }
 
+.update-link:visited,
+.delete-link:visited{
+    text-decoration: none;
+    color: blue;
+}
+
+.update-link:hover,
+.delete-link:hover{
+    color: darkblue;
+
+}
 
 @media only screen and (max-width: 768px){
     main{
