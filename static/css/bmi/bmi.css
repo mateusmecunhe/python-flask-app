@@ -76,3 +76,39 @@ form input{
     right: 0;
     bottom: 0
 }
+
+
+@media only screen and (max-width: 768px){
+    main{
+        padding-top: 60px;
+    }
+    body{
+        margin-top: 5%;
+        background-image: url('../../img/task-bg.jpg');
+        background-size: contain;
+        background-repeat: repeat;
+        
+    }
+    
+    form input{
+        height: 36px;
+        border: dotted white;
+    }
+
+    #submit{
+        width: 50%;
+        left: 40%;
+        position: absolute;
+        font-weight: bold
+    }
+
+    #submit:active{
+        background-color: rgb(90, 0, 200);
+        color: white
+    }
+
+    .pacient-card{
+        padding-top: 20px;
+        margin-bottom: 10px
+    }
+}

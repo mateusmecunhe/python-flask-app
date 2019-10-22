@@ -40,7 +40,13 @@ h1{
     display: inline-block;
     margin: 10px 10px;
     border-radius: 10%;
+    font-weight: bold;
     position: relative;
+}
+
+.card:hover{
+    background-color: #8d610ec0;
+
 }
 
 .card .task-content{
@@ -73,10 +79,10 @@ a:visited{
 
 a{
     text-decoration: none;
-    color: rgb(197, 149, 15);
+    color: rgb(255, 255, 255);
 }
 a:hover{
-    color: rgb(153, 121, 34);
+    color: rgb(217, 217, 226);
 }
 
 
@@ -105,7 +111,7 @@ a:hover{
   }
   
   input:focus::-webkit-input-placeholder {
-    color: dodgerblue;
+    color: #8d610ec0;
   }
 
   /* button style */
@@ -118,7 +124,7 @@ a:hover{
     /* margin: 0 0 0 100px; */
     padding:20px 60px;
     outline: none;
-    background-color: rgba(197, 149, 15, 0.541);;
+    background-color: #b97e127e;
     border: none;
     border-radius:5px;
     box-shadow: 0 9px #a576204d;
@@ -130,13 +136,16 @@ a:hover{
 }
 
 .submit-button:hover{
-    background-color: #2ecc71;
+    background-color: #8d610ec0;
+    font-weight: bold;
 }
   
   .submit-button:active {
-    background-color: #2ecc71;
+    background-color: #8d610eed;
     box-shadow: 0 5px #95a5a6;
-    transform: translateY(4px);
+    transform: translateY(3px);
+    transform: translateX(1px);
+    font-weight: bold;
 }
 
 .no-tasks-warning{
@@ -150,6 +159,7 @@ a:hover{
     background-repeat: repeat;
     max-width: 100%;
     }
+    
 
     .card-panel, .no-tasks-warning{
         margin-top: 25%;
