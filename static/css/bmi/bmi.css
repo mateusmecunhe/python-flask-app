@@ -2,6 +2,9 @@
     /* background-color: pink; */
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
 }
 
 body{
@@ -10,8 +13,34 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+h1{
+    margin-bottom: 30px;
+    text-align: center;
+    color: wheat;
+    background-color: rgba(0,0,0, 0.2)
+}
 
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+.form{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-flexbox{
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.pacient-card{
+    display: inline-table;
+    background-color: rgba(20, 20, 20, 0.2);
+
 }

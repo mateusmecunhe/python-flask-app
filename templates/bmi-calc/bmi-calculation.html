@@ -5,52 +5,48 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bmi/bmi.css') }}">
 {% endblock %}
 {% block body %}
-<h1>calculate your body-mass index</h1>
-<form action="/bmi/" , method="POST">
-    <input type="text" name="name" id="name" placeholder="type your name" required> <br>
-    <input type="number" name="weight" id="weight" placeholder="kg" required> <br>
-    <input type="number" name="height" id="height" placeholder="cm" required> <br>
-    <input type="submit" name="submit" id="submit" value="calculate!">
+<div class="container">
+    <h1>calculate your body-mass index</h1>
+    <div class="form">
+        <form action="/bmi/" , method="POST">
+            <input type="text" name="name" id="name" placeholder="type your name" required> <br>
+            <input type="number" name="weight" id="weight" placeholder="kg" required> <br>
+            <input type="number" name="height" id="height" placeholder="cm" required> <br>
+            <input type="submit" name="submit" id="submit" value="calculate!">
 
-</form>
-
-{% if error %}
-<p class=error><strong>Error:</strong> {{ error }}
-    {% endif %}
-
-    {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-    {% endfor %}
-
-    {% if pacients|length < 1 %}
-    <p class="no-tasks-warning">there are no pacients. Add one</p>
-
-    {% else %}
-    <div class="grid title">
-        <span>Name</span>
-        <span>weiight</span>
-        <span>height</span>
-        <span>bmi</span>
-        <span>Delete</span>
-        <span>update</span>
+        </form>
     </div>
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
 
-    <div class="grid data">
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% if pacients|length < 1 %}
+        <p class="no-tasks-warning">there are no pacients. Add one</p>
+
+        {% else %}
+<div class="cards-flexbox"></div>
         {% for pacient in pacients %}
+        
+            <div class="pacient-card">
+                <ul>
+                    <li>Name: {{pacient.name}}</li>
+                    <li>Weight: {{pacient.weight}}</li>
+                    <li>Height: {{pacient.height}}</li>
+                    <li>BMI: {{pacient.bmi}}</li>
+                </ul>
 
-        <span class="">{{pacient.name}}</span>
-        <span class="">{{pacient.weight}} kg</span>
-        <span class="">{{pacient.height}} cm</span>
-        <span class="">{{pacient.bmi}}</span>
+                <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
+                <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
+            </div>
 
-        <a href="/bmi/delete/{{pacient.id}}" class="links delete-link">Delete</a>
-        <a href="/bmi/update/{{pacient.id}}" class="links update-link">Update</a>
-
-
-
+        </div>
 
         {% endfor %}
-    </div>
-  
-    {% endif %}
-    {% endblock %}
+</div>
+</div>
+{% endif %}
+{% endblock %}
