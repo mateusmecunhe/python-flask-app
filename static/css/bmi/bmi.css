@@ -155,8 +155,8 @@ form input{
 
     #submit{
         width: 50%;
-        left: 40%;
-        position: absolute;
+        /* left: 40%; */
+        /* position: absolute; */
         font-weight: bold
     }
 
